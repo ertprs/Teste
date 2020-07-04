@@ -42,7 +42,7 @@ let calendar = google.calendar({version: 'v3', auth});
             },
             'colorId' : 4 ,
             'sendUpdates':'all',
-            'status' : 'confirmed'
+            'status' : 'confirmed' //testando comiit do git
         },
     }, (err, res) => {
         if (err) {
