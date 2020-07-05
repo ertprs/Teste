@@ -46,8 +46,8 @@ let calendar = google.calendar({version: 'v3', auth});
                 resolver(events)
 
            
-                    const telefonecliente = "55791916927"
-          console.log(events.length)
+                   
+       //   console.log(events.length)
         
           if(events.length < 3){
             para = true
@@ -84,27 +84,104 @@ var p1 = Promise.resolve({
     const dadosbruto = [];
     var continua = true 
    let inicio = new Date().toISOString()
-    do{
+   const teste2 = await teste(inicio)
+    const dadosfinal = [];
+    const telefonecliente = "55791916927"
+   
+   do{ 
         const dadoapi = [];
-       
+        const teste2 = await teste(inicio)
         dadoapi.push(await teste(inicio))
+        //teste2 = teste2 + await teste(inicio)
+        //console.log(teste2) 
+        //console.log(teste2.length+"quantudade")
+        const agesemcancelar = teste2.filter(function(agendamento) {
+             
+            return agendamento.attendees[1].responseStatus != "declined";                  
+        });
 
         // no numero do if dever igual ao do limite de requisição 
-        if(await dadoapi[0].length >= 3){
-            console.log( dadoapi[0][1].start.dateTime)
-            inicio = dadoapi[0][dadoapi[0].length -1].start.dateTime //pegaando a ultima data
-            console.log(dadoapi[0][0].attendees[1].responseStatus)
-            const agesemcancelar = dadoapi[0].filter(function(agendamento) {
-              
-                return agendamento.attendees[1].responseStatus != "declined";
+        if(await teste2.length >= 3){
+            //console.log( dadoapi[0][1].start.dateTime)
+            inicio = teste2[teste2.length -1].start.dateTime //pegaando a ultima data
+            //console.log(dadoapi[0][0].attendees[1].responseStatus)
+            
+
+         for (let i=0; i<agesemcancelar.length; i++){
+
+
+
+            telefone = agesemcancelar[i].description
+            resultaodo = telefone.substring(telefone.indexOf("telefone?:") + 12, telefone.indexOf("Precisa efetua")).replace(/ /g,"").replace(/-/g,"").trim();
+            console.log(resultaodo)
+          console.log(resultaodo.replace(/ /g,"").replace(/-/g,"").trim().length)
+
+          if(resultaodo.length = 13){
+            resultaodo = resultaodo.substring(0,4)+resultaodo.substring(5,14)
+          }
+
+            if(resultaodo == telefonecliente){
+
+                const idevent = agesemcancelar[i].id
+                const start = agesemcancelar[i].start.dateTime
+                const linkreagendar = agesemcancelar[i].substring(telefone.indexOf("Reagendar:") + 10, agesemcancelar[i].indexOf("Desenvolvido po")).trim();
+                const linkcancelar = agesemcancelar[i].substring(telefone.indexOf("Cancelar:") + 9, agesemcancelar[i].indexOf("Reagendar")).trim();
+                 // telefonecliente
+                const nomecliente =
+
+                dadosfinal.push({
+                    idevent,
+                    start,
+                    linkreagendar,
+                    linkcancelar,
+                    telefonecliente,
+                    nomecliente
+
+                  });
                 
-         
-            });
+                
+            }
+            
+
+
+
+            // adiconando
+            if(agesemcancelar[i].summary == 'iago e Consultório Lacy Lima'){
+                    const idevent = agesemcancelar[i].id
+                    const summary = agesemcancelar[i].summary
+
+                
+
+            }
+            //adcionando fim
+
+
+         }
+
             //console.log(agesemcancelar)
-       dadosbruto.push(await agesemcancelar)
+      // dadosbruto.push(await agesemcancelar)
 
             continua = true
         }else{
+
+
+            
+         for (let i=0; i<agesemcancelar.length; i++){
+
+
+            if(agesemcancelar[i].summary == 'iago e Consultório Lacy Lima'){
+                    const idevent = agesemcancelar[i].id
+                    const summary = agesemcancelar[i].summary
+
+                dadosfinal.push({
+                    idevent,
+                    summary
+                  });
+
+            }
+
+
+         }
             continua = false
         }
        //console.log( dadoapi[0][1])
@@ -117,5 +194,5 @@ var p1 = Promise.resolve({
 
     } while (continua  == true)
 
-  console.log( dadosbruto)
+  console.log(  dadosfinal)
   })()
