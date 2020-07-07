@@ -18,10 +18,10 @@ const googleeventos = require("./consultaeventosgoogle.js");
     console.log(eventosfinal)
       const eventosagenda = [];
      for(let i=0; i< eventosfinal.length;i++){
-      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Link cancelamento: ${eventosfinal[i].linkcancelar} \n`)
+      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Click aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      if(eventosagenda == 0){
-       return ["Infelimente nao localizamos com o numero informado digite *0* para voltar ao menu anterior ou tente outro numero"]
+       return ["Infelimente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
 
      }else{
      banco.db[user].stage = 0;
@@ -45,11 +45,11 @@ const googleeventos = require("./consultaeventosgoogle.js");
       console.log(eventosfinal)
       const eventosagenda = [];
      for(let i=0; i< eventosfinal.length;i++){
-      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Link cancelamento: ${eventosfinal[i].linkcancelar} \n`)
+      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Click aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      
      if(eventosagenda == 0){
-      return ["Infelimente nao localizamos com o numero informado digite *0* ou tente outro numero"]
+      return ["Infelimente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
 
     }else{
     banco.db[user].stage = 0;
@@ -64,10 +64,10 @@ const googleeventos = require("./consultaeventosgoogle.js");
     console.log(eventosfinal)
       const eventosagenda = [];
      for(let i=0; i< eventosfinal.length;i++){
-      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Link cancelamento: ${eventosfinal[i].linkcancelar} \n`)
+      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Click aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      if(eventosagenda == 0){
-       return ["Infelimente nao localizamos com o numero informado digite *0* ou tente outro numero"]
+       return["Infelimente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
 
      }else{
      banco.db[user].stage = 0;
@@ -83,13 +83,12 @@ const googleeventos = require("./consultaeventosgoogle.js");
         banco.db[user].stage = 1;
         return [
           "O que você deseja fazer?",
-          `Digite *1* Nova Consulta \nDigite *2* Reagendar Consulta \nDigite *3* Cancelar agendamento \nDigite *4* Para falar com a secretaria\n`,
+          `Digite *1*- Agendar uma nova consulta. \nDigite *2*- Reagendar Consulta \nDigite *3*- Cancelar consulta \nDigite *4*- Para falar com a secretaria\n`,
         ];;
   }
  
 
-  return [ "Favor informar o numero conforme o exemplo \nExemplo:*79 99191-6827*\nDigite *0* para voltar ao menu anterior"];
-
+  return [ "Favor informar um número com o DDD conforme este exemplo\nExemplo:*79 98801-1234**\nDigite *0* para voltar ao menu anterior"];
 
 
      
