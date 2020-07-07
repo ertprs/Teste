@@ -9,7 +9,7 @@ function execute(user, msg, contato) {
 
   return [
     `Olá, eu sou a atendente virtual🤖 do Consultório de Lacy Lima, e hoje vou te auxiliar no atendimento.`,"Como posso te ajudar 👩🏽‍⚕️?",
-    `Digite *1*- Agendar uma nova consulta.📅 \nDigite *2*- Reagendar Consulta.📆 \nDigite *3*- Cancelar consulta.❌ \nDigite *4*- Para falar com a secretária.👩🏻‍💻\n`,
+    `Digite *1*- Agendar uma nova consulta.📅 \n\nDigite *2*- Reagendar Consulta.📆 \n\nDigite *3*- Cancelar consulta.❌ \n\nDigite *4*- Para falar com a secretária.👩🏻‍💻\n\n`,
   ];
 }
 

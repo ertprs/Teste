@@ -28,7 +28,7 @@ bot.create().then((client) => start(client));
     (async () => {
      
     
-    let resp = await stages.step[getStage(message.from)].obj.execute(
+    let resp = await stages.step[getStage(message.from,message.body)].obj.execute(
       message.from,
       message.body,
       message.sender.name
@@ -49,7 +49,7 @@ bot.create().then((client) => start(client));
     if (banco.db[user]) {
       //Se existir esse numero no banco de dados
       if(banco.db[user].stage == 4){
-
+          console.log(resp)
         let linkcliente = ("https://wa.me/" + user.slice(0, 11))
 
         client.sendText("557991916927@c.us", `Cliente deseja sua atenção sobre ${resp} \n ${linkcliente}`);// enviar mensagem quando solicita falar com secretaria

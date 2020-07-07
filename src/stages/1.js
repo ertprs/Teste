@@ -17,13 +17,13 @@ function execute(user, msg) {
   }
   if (msg === "4") {
     banco.db[user].stage = 4;
-    return ["Só um minuto que vou chamar a humana! :D \n Para que eu possa transferir, qual assunto deseja tratar?" ];
+    return ["Só um minuto que vou chamar a humana!👩🏻‍💻", "\n Para que eu possa transferir, qual assunto deseja tratar?" ];
   }
 
 
   return [
-    "Desculpe! :( \nNão consegui entender! :( \n\nO código pode estar inválido, favor escolher uma destas opções:\n\n",
-    "Digite *1*- Agendar uma nova consulta.📅 \nDigite *2*- Reagendar Consulta.📆 \nDigite *3*- Cancelar consulta.❌ \nDigite *4*- Para falar com a secretária.👩🏻‍💻\n",
+    "Desculpe! \nNão consegui entender! 😔 \n\nO código pode estar inválido, favor escolher uma destas opções:\n\n",
+    "Digite *1*- Agendar uma nova consulta.📅 \n\nDigite *2*- Reagendar Consulta.📆 \n\nDigite *3*- Cancelar consulta.❌ \n\nDigite *4*- Para falar com a secretária.👩🏻‍💻\n\n",
   ];
 }
 
