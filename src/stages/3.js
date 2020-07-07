@@ -25,7 +25,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       let ano =  diaconsulta.slice(0, 4) 
       let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
 
-      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
+      eventosagenda.push(  `Paciente: *${eventosfinal[i].nomecliente}* \n Data: *${datalimpa}* \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      if(eventosagenda == 0){
        return ["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
@@ -60,7 +60,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
 
 
-      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
+      eventosagenda.push(  `Paciente: *${eventosfinal[i].nomecliente}* \n Data: *${datalimpa}* \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      
      if(eventosagenda == 0){
@@ -86,7 +86,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       let ano =  diaconsulta.slice(0, 4) 
       let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
 
-      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
+      eventosagenda.push(  `Paciente: *${eventosfinal[i].nomecliente}* \n Data: *${datalimpa}* \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      if(eventosagenda == 0){
        return["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]

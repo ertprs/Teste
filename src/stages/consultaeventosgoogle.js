@@ -45,7 +45,10 @@ const {google} = require('googleapis');
           console.log(resultaodo.replace(/ /g,"").replace(/-/g,"").trim().length)
 
           if(resultaodo.length = 13){
-           const resultaodomodificado = resultaodo.substring(0,4)+resultaodo.substring(5,14)
+           const resultaodomodificado = resultaodo.substring(0,4)+resultaodo.substring(6,14)
+
+           console.log(resultaodomodificado+ "telefonegoogle")
+           console.log(telefonecliente+ "teçefone cliente")
 
             if(resultaodomodificado == telefonecliente){
 
@@ -54,7 +57,7 @@ const {google} = require('googleapis');
               const linkreagendar = agesemcancelar[i].description.substring(telefone.indexOf("Reagendar:") + 10, agesemcancelar[i].description.indexOf("Desenvolvido po")).trim();
               const linkcancelar = agesemcancelar[i].description.substring(telefone.indexOf("Cancelar:") + 9, agesemcancelar[i].description.indexOf("Reagendar")).trim();
                // telefonecliente
-              const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e ")).trim()
+              const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e Consul")).trim()
 
               const eventoigual = dadosfinal.filter(function(exluciiugual) {
            
@@ -80,7 +83,7 @@ const {google} = require('googleapis');
           }
           }
 
-          if(resultaodo.length = 13){
+          if(resultaodo.length = 12){
 
             if(resultaodo == telefonecliente){
 
@@ -89,7 +92,7 @@ const {google} = require('googleapis');
                 const linkreagendar = agesemcancelar[i].description.substring(telefone.indexOf("Reagendar:") + 10, agesemcancelar[i].description.indexOf("Desenvolvido po")).trim();
                 const linkcancelar = agesemcancelar[i].description.substring(telefone.indexOf("Cancelar:") + 9, agesemcancelar[i].description.indexOf("Reagendar")).trim();
                  // telefonecliente
-                const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e ")).trim()
+                const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e Consul")).trim()
 
                 const eventoigual = dadosfinal.filter(function(exluciiugual) {
              
@@ -133,7 +136,7 @@ const {google} = require('googleapis');
           console.log(resultaodo.replace(/ /g,"").replace(/-/g,"").trim().length)
 
           if(resultaodo.length = 13){
-           const resultaodomodificado = resultaodo.substring(0,4)+resultaodo.substring(5,14)
+           const resultaodomodificado = resultaodo.substring(0,4)+resultaodo.substring(6,14)
 
             if(resultaodomodificado == telefonecliente){
 
@@ -142,7 +145,7 @@ const {google} = require('googleapis');
               const linkreagendar = agesemcancelar[i].description.substring(telefone.indexOf("Reagendar:") + 10, agesemcancelar[i].description.indexOf("Desenvolvido po")).trim();
               const linkcancelar = agesemcancelar[i].description.substring(telefone.indexOf("Cancelar:") + 9, agesemcancelar[i].description.indexOf("Reagendar")).trim();
                // telefonecliente
-              const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e ")).trim()
+              const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e Consul")).trim()
 
               const eventoigual = dadosfinal.filter(function(exluciiugual) {
            
@@ -168,7 +171,7 @@ const {google} = require('googleapis');
           }
           }
 
-          if(resultaodo.length = 13){
+          if(resultaodo.length = 12){
 
             if(resultaodo == telefonecliente){
 
@@ -177,7 +180,7 @@ const {google} = require('googleapis');
                 const linkreagendar = agesemcancelar[i].description.substring(telefone.indexOf("Reagendar:") + 10, agesemcancelar[i].description.indexOf("Desenvolvido po")).trim();
                 const linkcancelar = agesemcancelar[i].description.substring(telefone.indexOf("Cancelar:") + 9, agesemcancelar[i].description.indexOf("Reagendar")).trim();
                  // telefonecliente
-                const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e ")).trim()
+                const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e Consul")).trim()
 
                 const eventoigual = dadosfinal.filter(function(exluciiugual) {
              

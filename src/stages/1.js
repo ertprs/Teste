@@ -9,21 +9,21 @@ function execute(user, msg) {
 
   if (msg === "2") {
     banco.db[user].stage = 2;
-    return ["Sem problemas vamos agendar um novo horário agora memso!","Para consultar seu horário, preciso do número de telefone.\n\n Digite *1*- Se o número de telefone for este que estamos conversando.\n\n Caso seja outro número, digite-o com o DDD conforme este exemplo\nExemplo: *79 98801-1234*"];
+    return ["Sem problemas vamos agendar um novo horário agora memso!","Para consultar seu horário, preciso do número de telefone.\n\n Digite *1*- Se o número de telefone for este que estamos conversando.\n\n Caso seja outro número, digite-o com o DDD conforme este exemplo\n *79 98801-1234*"];
   }
   if (msg === "3") {
     banco.db[user].stage = 3;
-    return ["Que pena que tomou esta decisão.\nPara consultar seu horário, preciso do número de telefone.\n*digite-o com o DDD conforme este exemplo\nExemplo: *79 98801-1234*"];
+    return ["Que pena que tomou esta decisão.\n Para consultar seu horário, preciso do número de telefone.\n\n Digite *1*- Se o número de telefone for este que estamos conversando.\n\n Caso seja outro número, digite-o com o DDD conforme este exemplo\n *79 98801-1234*"];
   }
   if (msg === "4") {
     banco.db[user].stage = 4;
-    return ["Só um minuto que vou chamar a humana! :D /n Para que eu possa transferir, qual assunto deseja tratar?" ];
+    return ["Só um minuto que vou chamar a humana! :D \n Para que eu possa transferir, qual assunto deseja tratar?" ];
   }
 
 
   return [
-    "Desculpe! :( /nNão conseguir entender! :( /n/nO código pode estar inválido, favor escolher uma destas opções:/n/n",
-    "Digite 1,2,3 ou 4",
+    "Desculpe! :( \nNão consegui entender! :( \n\nO código pode estar inválido, favor escolher uma destas opções:\n\n",
+    "Digite *1*- Agendar uma nova consulta.📅 \nDigite *2*- Reagendar Consulta.📆 \nDigite *3*- Cancelar consulta.❌ \nDigite *4*- Para falar com a secretária.👩🏻‍💻\n",
   ];
 }
 

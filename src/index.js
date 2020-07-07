@@ -45,11 +45,14 @@ bot.create().then((client) => start(client));
   })()
   });
 
-  function getStage(user) {
+  function getStage(user, resp) {
     if (banco.db[user]) {
       //Se existir esse numero no banco de dados
       if(banco.db[user].stage == 4){
-        client.sendText("557991916927@c.us", `Cliente deseja sua atenção ${user}`);// enviar mensagem quando solicita falar com secretaria
+
+        let linkcliente = ("https://wa.me/" + user.slice(0, 11))
+
+        client.sendText("557991916927@c.us", `Cliente deseja sua atenção sobre ${resp} \n ${linkcliente}`);// enviar mensagem quando solicita falar com secretaria
         
       }
       return banco.db[user].stage;

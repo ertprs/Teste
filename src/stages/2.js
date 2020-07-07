@@ -26,7 +26,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
 
      
-      eventosagenda.push(  `Paciente: *${eventosfinal[i].nomecliente}* \n Data: *${datalimpa}* \n Click aqui para buscar um novo horário: ${eventosfinal[i].linkreagendar} \n`)
+      eventosagenda.push(  `Paciente: *${eventosfinal[i].nomecliente}* \n Data: *${datalimpa}* \nClick aqui para buscar um novo horário: ${eventosfinal[i].linkreagendar} \n`)
      }
      if(eventosagenda == 0){
        return ["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
@@ -46,6 +46,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
     
     console.log("aqui10")
     if(msg.replace(/ /g,"").replace(/-/g,"").trim().length == 11){
+
       const resultaodobruto = msg.replace(/ /g,"").replace(/-/g,"").trim()
       const telefonecliente = "55"+resultaodobruto.substring(0,2)+resultaodobruto.substring(4,14)
       console.log(telefonecliente + "1111111")
@@ -62,7 +63,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
 
 
-      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \n Click aqui para buscar um novo horário: ${eventosfinal[i].linkreagendar} \n`)
+      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para buscar um novo horário: ${eventosfinal[i].linkreagendar} \n`)
      }
      
      if(eventosagenda == 0){
@@ -90,7 +91,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       let ano =  diaconsulta.slice(0, 4) 
       let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
 
-      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \n Click aqui para buscar um novo horário: ${eventosfinal[i].linkreagendar} \n`)
+      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para buscar um novo horário: ${eventosfinal[i].linkreagendar} \n`)
      }
      if(eventosagenda == 0){
        return ["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
