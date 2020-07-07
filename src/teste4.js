@@ -1,10 +1,1 @@
-const bot = require("venom-bot");
-const googleeventos = require("./stages/consultaeventosgoogle.js");
-
-
-
-async function teste(){
-    console.log(await  googleeventos.eventesgoogleapi()+"sssssssssssss")
-    
-}
-teste()
+consolo.log(Date("2020-07-30T09:00:00-03:00" ))
