@@ -9,11 +9,11 @@ function execute(user, msg) {
 
   if (msg === "2") {
     banco.db[user].stage = 2;
-    return ["Sem problemas vamos agendar um novo horário agora memso!","Para consultar seu horario, preciso do numero de telefone.\n Digite *1*- Se o numero de telefone for este que estamos conversando.\n Caso seja outro número, digite-o com o DDD conforme este exemplo\nExemplo:*79 98801-1234*"];
+    return ["Sem problemas vamos agendar um novo horário agora memso!","Para consultar seu horário, preciso do número de telefone.\n\n Digite *1*- Se o número de telefone for este que estamos conversando.\n\n Caso seja outro número, digite-o com o DDD conforme este exemplo\nExemplo: *79 98801-1234*"];
   }
   if (msg === "3") {
     banco.db[user].stage = 3;
-    return ["Que pena que tomou esta decisão.\nPara consultar seu horario, preciso do numero de telefone.\n*digite-o com o DDD conforme este exemplo\nExemplo:*79 98801-1234*"];
+    return ["Que pena que tomou esta decisão.\nPara consultar seu horário, preciso do número de telefone.\n*digite-o com o DDD conforme este exemplo\nExemplo: *79 98801-1234*"];
   }
   if (msg === "4") {
     banco.db[user].stage = 4;
@@ -22,7 +22,7 @@ function execute(user, msg) {
 
 
   return [
-    "Desculpe! :( /nNão conseguir entender! :( /n/nO código pode estar inválido, favor escolher uma destas opções:/n",
+    "Desculpe! :( /nNão conseguir entender! :( /n/nO código pode estar inválido, favor escolher uma destas opções:/n/n",
     "Digite 1,2,3 ou 4",
   ];
 }

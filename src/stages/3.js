@@ -18,10 +18,17 @@ const googleeventos = require("./consultaeventosgoogle.js");
     console.log(eventosfinal)
       const eventosagenda = [];
      for(let i=0; i< eventosfinal.length;i++){
-      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Click aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
+      let diaconsulta = eventosfinal[i].start 
+      let hora =  diaconsulta.slice(11, 16)
+      let dia =  diaconsulta.slice(8, 10)
+      let mes =  diaconsulta.slice(5, 7) 
+      let ano =  diaconsulta.slice(0, 4) 
+      let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
+
+      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      if(eventosagenda == 0){
-       return ["Infelimente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
+       return ["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
 
      }else{
      banco.db[user].stage = 0;
@@ -45,11 +52,19 @@ const googleeventos = require("./consultaeventosgoogle.js");
       console.log(eventosfinal)
       const eventosagenda = [];
      for(let i=0; i< eventosfinal.length;i++){
-      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Click aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
+      let diaconsulta = eventosfinal[i].start 
+      let hora =  diaconsulta.slice(11, 16)
+      let dia =  diaconsulta.slice(8, 10)
+      let mes =  diaconsulta.slice(5, 7) 
+      let ano =  diaconsulta.slice(0, 4) 
+      let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
+
+
+      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      
      if(eventosagenda == 0){
-      return ["Infelimente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
+      return ["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
 
     }else{
     banco.db[user].stage = 0;
@@ -64,10 +79,17 @@ const googleeventos = require("./consultaeventosgoogle.js");
     console.log(eventosfinal)
       const eventosagenda = [];
      for(let i=0; i< eventosfinal.length;i++){
-      eventosagenda.push(  `Nome cliente : ${eventosfinal[i].nomecliente} \n Data: ${eventosfinal[i].start} \n Click aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
+      let diaconsulta = eventosfinal[i].start 
+      let hora =  diaconsulta.slice(11, 16)
+      let dia =  diaconsulta.slice(8, 10)
+      let mes =  diaconsulta.slice(5, 7) 
+      let ano =  diaconsulta.slice(0, 4) 
+      let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
+
+      eventosagenda.push(  `Paciente: ${eventosfinal[i].nomecliente} \n Data: ${datalimpa} \nClick aqui para cancelar a sua agenda: ${eventosfinal[i].linkcancelar} \n`)
      }
      if(eventosagenda == 0){
-       return["Infelimente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
+       return["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
 
      }else{
      banco.db[user].stage = 0;
