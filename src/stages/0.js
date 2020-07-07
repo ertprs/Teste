@@ -8,8 +8,8 @@ function execute(user, msg, contato) {
   banco.db[user].stage = 1;
 
   return [
-    `Olá, aqui é do Consultório da Nutri eu sou a atendente virtual e vou auxiliar no seu atendimento.`,"O que você deseja fazer?",
-    `Digite *1* Nova Consulta \nDigite *2* Reagendar Consulta \nDigite *3* Cancelar agendamento \nDigite *4* Para falar com a secretaria\n`,
+    `Olá, eu sou a atendente virtual🤖 do Consultório de Lacy Lima, e hoje vou te auxiliar no atendimento.`,"Como posso te ajudar 👩🏽‍⚕️?",
+    `Digite *1*- Agendar uma nova consulta.📅 \n\nDigite *2*- Reagendar Consulta.📆 \n\nDigite *3*- Cancelar consulta.❌ \n\nDigite *4*- Para falar com a secretária.👩🏻‍💻\n\n`,
   ];
 }
 
