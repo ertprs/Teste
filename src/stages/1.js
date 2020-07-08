@@ -13,7 +13,7 @@ function execute(user, msg) {
   }
   if (msg === "3") {
     banco.db[user].stage = 3;
-    return ["Que pena que tomou esta decisão.\n Para consultar seu horário, preciso do número de telefone.\n\n Digite *1*- Se o número de telefone for este que estamos conversando.\n\n Caso seja outro número, digite-o com o DDD conforme este exemplo\n *79 98801-1234*"];
+    return ["Que pena que tomou esta decisão.\nPara consultar seu horário, preciso do número de telefone.\n\nDigite *1*- Se o número de telefone for este que estamos conversando.\n\nCaso seja outro número, digite-o com o DDD conforme este exemplo:\n *79 98801-1234*"];
   }
   if (msg === "4") {
     banco.db[user].stage = 4;
