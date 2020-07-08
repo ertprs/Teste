@@ -4,7 +4,7 @@ const linkagendamento = "https://calendly.com/lacylima/consulta"
 function execute(user, msg) {
   if (msg === "1") {
     banco.db[user].stage = 0;
-    return [`Oii, vi que você quer agendar uma consulta!!\nVou te mandar um link para você escolher qual horário melhor se encaixa na sua agenda!:${linkagendamento} \n Qualquer duvida estaria por aqui para te auxiliar.`];
+    return [`Oii, vi que você quer agendar uma consulta!!\n\nVou te mandar um link para você escolher qual horário melhor se encaixa na sua agenda!\n${linkagendamento} \n\nQualquer duvida estarei por aqui para te auxiliar.🤳🏼`];
   }
 
   if (msg === "2") {

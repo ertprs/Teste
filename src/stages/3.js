@@ -110,7 +110,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
   }
  
 
-  return [ "Favor informar um número com o DDD conforme este exemplo\nExemplo:*79 98801-1234**\nDigite *0* para voltar ao menu anterior"];
+  return [ "Favor informar um número com o DDD conforme este exemplo:\n\n*79 98801-1234**\nDigite *0* para voltar ao menu anterior."];
 
 
      

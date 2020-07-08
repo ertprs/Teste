@@ -5,7 +5,7 @@ function execute(user, msg) {
 
   setTimeout(function(){ banco.db[user].stage = 0}, 60000);
   return [
-    "Obrigada pelo contato!",
+    "Obrigada pelo contato!👾",
     "",
     
   ];

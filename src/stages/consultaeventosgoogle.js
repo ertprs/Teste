@@ -29,7 +29,7 @@ const {google} = require('googleapis');
         });
 
         // no numero do if dever igual ao do limite de requisição 
-        if(await teste2.length >= 3){
+        if(await teste2.length >= 200){
             //console.log( dadoapi[0][1].start.dateTime)
             inicio = teste2[teste2.length -1].start.dateTime //pegaando a ultima data
             //console.log(dadoapi[0][0].attendees[1].responseStatus)
@@ -271,7 +271,7 @@ const {google} = require('googleapis');
                      
          //   console.log(events.length)
           
-            if(events.length < 3){
+            if(events.length < 200){
               para = true
             }else{
               para = false

@@ -50,9 +50,9 @@ bot.create().then((client) => start(client));
       //Se existir esse numero no banco de dados
       if(banco.db[user].stage == 4){
           console.log(resp)
-        let linkcliente = ("https://wa.me/" + user.slice(0, 11))
+        let linkcliente = ("https://wa.me/" + user.slice(0, 12))
 
-        client.sendText("557991916927@c.us", `Cliente deseja sua atenção sobre ${resp} \n ${linkcliente}`);// enviar mensagem quando solicita falar com secretaria
+        client.sendText("557988091188@c.us", `Cliente deseja sua atenção sobre ${resp} \n ${linkcliente}`);// enviar mensagem quando solicita falar com secretaria
         
       }
       return banco.db[user].stage;
