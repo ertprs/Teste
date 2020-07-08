@@ -276,12 +276,7 @@ const {google} = require('googleapis');
             }else{
               para = false
             }
-            // console.log(events[0])
-            
-  
-  
-  
-              //console.log(res.data);
+        
           }
   });
   });
