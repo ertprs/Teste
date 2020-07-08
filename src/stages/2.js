@@ -81,6 +81,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
     console.log(telefonecliente +" aqui o numero com 10")
     const eventosfinal =await   googleeventos.eventesgoogleapi( telefonecliente)
     console.log(eventosfinal)
+
       const eventosagenda = [];
      for(let i=0; i< eventosfinal.length;i++){
 
