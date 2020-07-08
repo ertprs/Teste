@@ -10,9 +10,6 @@
     "build": "concurrently \"cd client && npm run build\" \"npm build \"",
 
     "client": "cd ./client && npm start ",
-    "server-prod": "node app.js",
-    "server": "nodemon app.js",
-
     "start:dev": "concurrently --kill-others  \"npm run client\" \"npm run server\" ",
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
