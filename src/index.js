@@ -11,7 +11,6 @@ bot.create().then((client) => start(client));
 
  function start(client) {
 
-
   client.onStateChange((state) => {
     console.log(state);
     const conflits = [

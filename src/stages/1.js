@@ -9,7 +9,7 @@ function execute(user, msg) {
 
   if (msg === "2") {
     banco.db[user].stage = 2;
-    return ["Sem problemas vamos agendar um novo horário agora memso!","Para consultar seu horário, preciso do número de telefone.\n\n Digite *1*- Se o número de telefone for este que estamos conversando.\n\n Caso seja outro número, digite-o com o DDD conforme este exemplo\n *79 98801-1234*"];
+    return ["Sem problemas vamos agendar um novo horário agora mesmo!","Para consultar seu horário, preciso do número de telefone.\n\n Digite *1*- Se o número de telefone for este que estamos conversando.\n\n Caso seja outro número, digite-o com o DDD conforme este exemplo\n *79 98801-1234*"];
   }
   if (msg === "3") {
     banco.db[user].stage = 3;

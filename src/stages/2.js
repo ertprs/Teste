@@ -51,7 +51,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       let datalimpa = dia +"/" + mes +"/"+ano + " às " + hora
 
      
-      eventosagenda.push(  `Paciente: *${eventosfinal[i].nomecliente}* \nData: *${datalimpa}* \n\n👇🏼Click aqui para buscar um novo horário:👇🏼 ${eventosfinal[i].linkreagendar} \n`)
+      eventosagenda.push(  `Paciente: *${eventosfinal[i].nomecliente}* \nData: *${datalimpa}* \n\n👇🏼Click aqui para buscar um novo horário:👇🏼\n ${eventosfinal[i].linkreagendar} \n`)
      }
      if(eventosagenda == 0){
        return ["Infelizmente não localizamos nenhuma consulta com o número informado, digite *0* para voltar ao menu anterior ou caso queira, posso tentar com outro número!"]
