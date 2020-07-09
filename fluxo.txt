@@ -3,3 +3,6 @@
 -- Resumo 
 -- endereço de entrega 
 -- enceramento
+
+
+npm install -i express venom-bot googleapis

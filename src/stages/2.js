@@ -23,7 +23,7 @@ const googleeventos = require("./consultaeventosgoogle.js");
       case 11: 
 
         const resultaodobruto = msg.replace(/ /g,"").replace(/-/g,"").trim()
-        telefonecliente = "55" + resultaodobruto.substring(0, 2) + resultaodobruto.substring(4, 14)
+        telefonecliente = "55" + resultaodobruto.substring(0, 2) + resultaodobruto.substring(3, 14)
         //console.log(telefonecliente + "aqui o numero com 10 que era 11")
       break;
 

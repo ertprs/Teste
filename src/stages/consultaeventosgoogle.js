@@ -3,7 +3,7 @@ const {google} = require('googleapis');
 
 
 
- 
+const qtdventos = 200;
 
 
 async function eventesgoogleapi(telefonecliente){
@@ -14,9 +14,11 @@ var continua = true
 let inicio = new Date().toISOString()
 const teste2 = await apigoogleleitura(inicio)
 const dadosfinal = [];
+ //lembrar de modifica na api do google tambem
 
-
+console.log(telefonecliente)
 do{ 
+  continua = true;
     const dadoapi = [];
     const teste2 = await apigoogleleitura(inicio)
     dadoapi.push(await apigoogleleitura(inicio))
@@ -29,7 +31,7 @@ do{
     });
 
     // no numero do if dever igual ao do limite de requisição 
-    if(await teste2.length >= 200){
+ 
         //console.log( dadoapi[0][1].start.dateTime)
         inicio = teste2[teste2.length -1].start.dateTime //pegaando a ultima data
         //console.log(dadoapi[0][0].attendees[1].responseStatus)
@@ -47,8 +49,8 @@ do{
       if(resultaodo.length == 13){
        const resultaodomodificado = resultaodo.substring(0,4)+resultaodo.substring(5,14)
 
-       //console.log(resultaodomodificado+ "telefone google ==13")
-       //console.log(telefonecliente+ "teçefone cliente")
+       console.log(resultaodomodificado+ "telefone google ==13")
+       console.log(telefonecliente+ "teçefone cliente")
 
         if(resultaodomodificado == telefonecliente){
 
@@ -83,9 +85,15 @@ do{
       }
       }
 
+
       if(resultaodo.length == 12){
 
+
+        console.log(resultaodo+ "telefone google ==12")
+        console.log(telefonecliente+ "teçefone cliente")
         if(resultaodo == telefonecliente){
+
+       
 
             const idevent = agesemcancelar[i].id
             const start = agesemcancelar[i].start.dateTime
@@ -118,97 +126,12 @@ do{
         }
      }
 
-     }
+     
 
         //console.log(agesemcancelar)
   // dadosbruto.push(await agesemcancelar)
-
-        continua = true
-    }else{
-
-      for (let i=0; i<agesemcancelar.length; i++){
-
-
-
-        telefone = agesemcancelar[i].description
-      const  resultaodo = telefone.substring(telefone.indexOf("telefone?:") + 12, telefone.indexOf("Precisa efetua")).replace(/ /g,"").replace(/-/g,"").trim();
-       // console.log(resultaodo)
-      //console.log(resultaodo.replace(/ /g,"").replace(/-/g,"").trim().length)
-
-      if(resultaodo.length == 13){
-       const resultaodomodificado = resultaodo.substring(0,4)+resultaodo.substring(5,14)
-
-        if(resultaodomodificado == telefonecliente){
-
-          const idevent = agesemcancelar[i].id
-          const start = agesemcancelar[i].start.dateTime
-          const linkreagendar = agesemcancelar[i].description.substring(telefone.indexOf("Reagendar:") + 10, agesemcancelar[i].description.indexOf("Desenvolvido po")).trim();
-          const linkcancelar = agesemcancelar[i].description.substring(telefone.indexOf("Cancelar:") + 9, agesemcancelar[i].description.indexOf("Reagendar")).trim();
-           // telefonecliente
-          const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e Consul")).trim()
-
-          const eventoigual = dadosfinal.filter(function(exluciiugual) {
-       
-            return exluciiugual.idevent == idevent ;                  
-        });
-          
-
-        if (eventoigual == 0){
-
-
-          dadosfinal.push({
-            idevent,
-            start,
-            linkreagendar,
-            linkcancelar,
-            telefonecliente,
-            nomecliente
-
-          });
-        }
-          
-
-      }
-      }
-
-      if(resultaodo.length == 12){
-
-        if(resultaodo == telefonecliente){
-
-            const idevent = agesemcancelar[i].id
-            const start = agesemcancelar[i].start.dateTime
-            const linkreagendar = agesemcancelar[i].description.substring(telefone.indexOf("Reagendar:") + 10, agesemcancelar[i].description.indexOf("Desenvolvido po")).trim();
-            const linkcancelar = agesemcancelar[i].description.substring(telefone.indexOf("Cancelar:") + 9, agesemcancelar[i].description.indexOf("Reagendar")).trim();
-             // telefonecliente
-            const nomecliente = agesemcancelar[i].summary.substring(0, agesemcancelar[i].summary.indexOf("e Consul")).trim()
-
-            const eventoigual = dadosfinal.filter(function(exluciiugual) {
-         
-              return exluciiugual.idevent == idevent ;                  
-          });
-            
-
-          if (eventoigual == 0){
-
-
-            dadosfinal.push({
-              idevent,
-              start,
-              linkreagendar,
-              linkcancelar,
-              telefonecliente,
-              nomecliente
-
-            });
-          }
-            
-
-        }
-     }
-
-     }
-     
-        continua = false
+  if(await teste2.length < qtdventos){
+        continua = false}
     }
    //console.log( dadoapi[0][1])
 
@@ -253,7 +176,7 @@ calendar.events.list({
       auth: auth,
       calendarId: 'primary',
       timeMin: `${inicio}`,
-      maxResults: 200,
+      maxResults: qtdventos,
       singleEvents: true,
       orderBy: 'startTime',
       
@@ -292,7 +215,11 @@ calendar.events.list({
 
 return dadosfinal
 }
-
+{
+/*async function teste(){
+ console.log(await eventesgoogleapi("557991916927"))
+}
+teste()*/}
 exports.eventesgoogleapi= eventesgoogleapi
 
 
