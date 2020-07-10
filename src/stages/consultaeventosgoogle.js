@@ -28,7 +28,11 @@ do{
     const agesemcancelar = teste2.filter(function(agendamento) {
          
         return agendamento.attendees[1].responseStatus != "declined";                  
-    });
+    });  
+    if (await agesemcancelar == 0 ){
+      continua = false 
+    }
+
 
     // no numero do if dever igual ao do limite de requisição 
  
