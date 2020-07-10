@@ -8,7 +8,12 @@ const googleeventos = require("./consultaeventosgoogle.js");
   const {google} = require('googleapis');
   //console.log(user)
     // pega o numero do whats
-
+    if (msg == 0) {
+      banco.db[user].stage = 1;
+      return [
+        "O que você deseja fazer?",
+        `Digite *1*- Agendar uma nova consulta.📅 \n\nDigite *2*- Reagendar Consulta.📆 \n\nDigite *3*- Cancelar consulta.❌ \n\nDigite *4*- Para falar com a secretária.👩🏻‍💻\n\n`,
+      ];
     
     let telefonecliente = 0
     //console.log(msg);
